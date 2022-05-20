@@ -1,34 +1,110 @@
 openapi: "3.0.0"
 info:
-  description: "API Description"
+  title: "Feiertage API"
   version: "1.0.0"
-  title: "Amtsname: API Name"
+  description: "Deutsche Feiertage per JSON-Webservice (API) "
+  contact:
+    name: "bund.dev"
+    email: "kontakt@bund.dev"
+    url:  "https://bund.dev"
 
 servers:
-  - url: "https://warnung.bund.de/api31"
-
+  - url: https://feiertage-api.de/api/
 paths:
-  /dashboard/{AGS}.json:
+  /:
     get:
-      summary: Name des Endpoints
-      responses:
-        '200':
-            description: OK
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/Result'
+      summary: Get Feiertage
+      operationId: getFeiertage
+      tags:
+        - feiertage
       parameters:
-        - in: path
+        - name: jahr
+          in: query
+          description: Welches Jahr?
           required: true
-          name: AGS
           schema:
             type: string
-          description: Amtlicher Gebietsschlüssel - kann z.B. von [hier](https://www.xrepository.de/api/xrepository/urn:de:bund:destatis:bevoelkerungsstatistik:schluessel:rs_2021-07-31/download/Regionalschl_ssel_2021-07-31.json) bezogen werden. Die Letzten 7 Stellen müssen dabei mit "0000000" ersetzt werden, weil die Daten nur auf [Kreisebene](https://de.wikipedia.org/wiki/Amtlicher_Gemeindeschl%C3%BCssel) bereitgestellt werden. 
-          example: "example-parameter"
+            format: date
+            description: Creation date
+            example: "2021"
+        - name: nur_land
+          in: query
+          description: Welches Bundesland?
+          required: false
+          schema:
+            type: string
+            enum:
+              - BW
+              - BY
+              - BE
+              - BB
+              - HB
+              - HH
+              - HE
+              - MV
+              - NI
+              - NW
+              - RP
+              - SL
+              - SN
+              - ST
+              - SH
+              - TH
+        - name: nur_daten
+          in: query
+          description: Nur Daten oder auch Hinweise?
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Feiertage
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Feiertage"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 
-          
-components: 
-    schemas:
-      Result:
-        type: string
+components:
+  schemas:
+    Feiertag:
+      type: object
+      required:
+        - datum
+      properties:
+        datum:
+          type: string
+        hinweis:
+          type: string
+    Feiertage:
+      type: object
+      example:
+        Neujahrstag: '2021-01-01'
+        Heilige Drei Könige: '2021-01-06'
+        Frauentag: '2021-03-08'
+        Gründonnerstag: '2021-04-01'
+        Karfreitag: '2021-04-02'
+        Ostersonntag: '2021-04-04'
+        Ostermontag: '2021-04-05'
+        Tag der Arbeit: '2021-05-01'
+        Christi Himmelfahrt: '2021-05-13'
+        Pfingstsonntag: '2021-05-23'
+        Pfingstmontag: '2021-05-24'
+        Fronleichnam: '2021-06-03'
+        Augsburger Friedensfest: '2021-08-08'
+        Mariä Himmelfahrt: '2021-08-15'
+        Weltkindertag: '2021-09-20'
+        Tag der Deutschen Einheit: '2021-10-03'
+        Reformationstag: '2021-10-31'
+        Allerheiligen: '2021-11-01'
+        Buß- und Bettag: '2021-11-17'
+        1. Weihnachtstag: '2021-12-25'
+        2. Weihnachtstag: '2021-12-26'
+
+    Error:
+      type: object

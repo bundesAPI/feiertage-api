@@ -1,15 +1,15 @@
 templateDir: deutschland_templates # For local use: ./local/deutschland_templates
 additionalProperties:
-  packageName: "<NAME>"
+  packageName: "feiertage"
   infoName: "BundesAPI"
   infoEmail: "kontakt@bund.dev"
-  packageVersion: <VERSION>
-  packageUrl: "https://github.com/bundesAPI/<REPO>"
+  packageVersion: 1.0.0
+  packageUrl: "https://github.com/bundesAPI/feiertage-api"
   namespace: "deutschland"
   docLanguage: "de"
 gitHost: "github.com"
 gitUserId: "bundesAPI"
-gitRepoId: "<REPO-ID>"
+gitRepoId: "feiertage-api"
 files:
   pyproject.mustache:
     destinationFilename: pyproject.toml
