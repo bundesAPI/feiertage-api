@@ -1,0 +1,34 @@
+openapi: "3.0.0"
+info:
+  description: "API Description"
+  version: "1.0.0"
+  title: "Amtsname: API Name"
+
+servers:
+  - url: "https://warnung.bund.de/api31"
+
+paths:
+  /dashboard/{AGS}.json:
+    get:
+      summary: Name of endpoint
+      responses:
+        '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Result'
+      parameters:
+        - in: path
+          required: true
+          name: AGS
+          schema:
+            type: string
+          description: Official area key - can be retrieved from [here](https://www.xrepository.de/api/xrepository/urn:de:bund:destatis:bevoelkerungsstatistik:schluessel:rs_2021-07-31/download/Regionalschl_ssel_2021-07-31.json). The last 7 digits have to be replaced with "0000000" because data is only offered on the area level [Kreisebene](https://de.wikipedia.org/wiki/Amtlicher_Gemeindeschl%C3%BCssel). 
+          example: "example-parameter"
+
+          
+components: 
+    schemas:
+      Result:
+        type: string

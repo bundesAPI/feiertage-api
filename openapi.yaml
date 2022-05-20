@@ -1,0 +1,34 @@
+openapi: "3.0.0"
+info:
+  description: "API Description"
+  version: "1.0.0"
+  title: "Amtsname: API Name"
+
+servers:
+  - url: "https://warnung.bund.de/api31"
+
+paths:
+  /dashboard/{AGS}.json:
+    get:
+      summary: Name des Endpoints
+      responses:
+        '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Result'
+      parameters:
+        - in: path
+          required: true
+          name: AGS
+          schema:
+            type: string
+          description: Amtlicher Gebietsschlüssel - kann z.B. von [hier](https://www.xrepository.de/api/xrepository/urn:de:bund:destatis:bevoelkerungsstatistik:schluessel:rs_2021-07-31/download/Regionalschl_ssel_2021-07-31.json) bezogen werden. Die Letzten 7 Stellen müssen dabei mit "0000000" ersetzt werden, weil die Daten nur auf [Kreisebene](https://de.wikipedia.org/wiki/Amtlicher_Gemeindeschl%C3%BCssel) bereitgestellt werden. 
+          example: "example-parameter"
+
+          
+components: 
+    schemas:
+      Result:
+        type: string
