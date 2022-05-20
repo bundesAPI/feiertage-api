@@ -24,7 +24,6 @@ paths:
           required: true
           schema:
             type: string
-            format: date
             description: Creation date
             example: "2021"
         - name: nur_land
