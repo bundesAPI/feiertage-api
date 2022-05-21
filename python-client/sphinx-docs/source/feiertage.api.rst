@@ -4,10 +4,10 @@ feiertage.api package
 Submodules
 ----------
 
-feiertage.api.feiertage\_api module
------------------------------------
+feiertage.api.default\_api module
+---------------------------------
 
-.. automodule:: feiertage.api.feiertage_api
+.. automodule:: feiertage.api.default_api
    :members:
    :undoc-members:
    :show-inheritance:

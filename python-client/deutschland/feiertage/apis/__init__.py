@@ -5,7 +5,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from deutschland.feiertage.api.feiertage_api import FeiertageApi
+#   from deutschland.feiertage.api.default_api import DefaultApi
 #
 # or import this package, but before doing it, use:
 #
@@ -13,4 +13,4 @@
 #   sys.setrecursionlimit(n)
 
 # Import APIs into API package:
-from deutschland.feiertage.api.feiertage_api import FeiertageApi
+from deutschland.feiertage.api.default_api import DefaultApi

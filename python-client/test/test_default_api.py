@@ -11,16 +11,16 @@
 
 import unittest
 
-from deutschland.feiertage.api.feiertage_api import FeiertageApi  # noqa: E501
+from deutschland.feiertage.api.default_api import DefaultApi  # noqa: E501
 
 from deutschland import feiertage
 
 
-class TestFeiertageApi(unittest.TestCase):
-    """FeiertageApi unit test stubs"""
+class TestDefaultApi(unittest.TestCase):
+    """DefaultApi unit test stubs"""
 
     def setUp(self):
-        self.api = FeiertageApi()  # noqa: E501
+        self.api = DefaultApi()  # noqa: E501
 
     def tearDown(self):
         pass

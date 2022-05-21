@@ -1,10 +1,10 @@
-# feiertage.FeiertageApi
+# feiertage.DefaultApi
 
 All URIs are relative to *https://feiertage-api.de/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_feiertage**](FeiertageApi.md#get_feiertage) | **GET** / | Get Feiertage
+[**get_feiertage**](DefaultApi.md#get_feiertage) | **GET** / | Get Feiertage
 
 
 # **get_feiertage**
@@ -18,7 +18,7 @@ Get Feiertage
 ```python
 import time
 from deutschland import feiertage
-from deutschland.feiertage.api from deutschland import feiertage_api
+from deutschland.feiertage.api import default_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://feiertage-api.de/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -30,7 +30,7 @@ configuration = feiertage.Configuration(
 # Enter a context with an instance of the API client
 with feiertage.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = feiertage_api.FeiertageApi(api_client)
+    api_instance = default_api.DefaultApi(api_client)
     jahr = "2021" # str | Welches Jahr?
     nur_land = "BW" # str | Welches Bundesland? (optional)
     nur_daten = 1 # int | Nur Daten oder auch Hinweise? (optional)
@@ -41,7 +41,7 @@ with feiertage.ApiClient() as api_client:
         api_response = api_instance.get_feiertage(jahr)
         pprint(api_response)
     except feiertage.ApiException as e:
-        print("Exception when calling FeiertageApi->get_feiertage: %s\n" % e)
+        print("Exception when calling DefaultApi->get_feiertage: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -50,7 +50,7 @@ with feiertage.ApiClient() as api_client:
         api_response = api_instance.get_feiertage(jahr, nur_land=nur_land, nur_daten=nur_daten)
         pprint(api_response)
     except feiertage.ApiException as e:
-        print("Exception when calling FeiertageApi->get_feiertage: %s\n" % e)
+        print("Exception when calling DefaultApi->get_feiertage: %s\n" % e)
 ```
 
 
