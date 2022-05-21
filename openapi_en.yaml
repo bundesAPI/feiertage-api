@@ -15,8 +15,6 @@ paths:
     get:
       summary: Get Feiertage
       operationId: getFeiertage
-      tags:
-        - feiertage
       parameters:
         - name: jahr
           in: query
