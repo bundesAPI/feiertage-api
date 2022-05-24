@@ -2,7 +2,7 @@
 
 # Feiertage API
 
-Der [Feiertage Webservice](https://feiertage-api.de/) bietet den Zugriff auf deutsche Feiertage im JSON-Format.
+Der [Feiertage Webservice](https://feiertage-api.de/) von [Julian Richter](https://www.paypal.com/donate?token=-JAL84u4LbrgiDzVqvJqWOnqhusn30r_FwEBT65n0kqlZd7FTRidVBPL9kjFsKIOsZaqFTEm0jz6_JVm) bietet den Zugriff auf deutsche Feiertage im JSON-Format.
 
 Das Tool basiert auf den Angaben von http://de.wikipedia.org/wiki/Feiertage_in_Deutschland. Auf der Wikipedia-Seite ist ersichtlich, dass manche Feiertage nicht im ganzen Bundesgebiet, sondern auf Bundeslandebene gelten. Die dort genannten Informationen sind im Tool hinterlegt.
 

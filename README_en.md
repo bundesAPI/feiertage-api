@@ -2,7 +2,7 @@
 
 # Holidays API
 
-The [Holidays Web Service](https://feiertage api.de/) provides access to German holidays in JSON format. 
+The [Holidays Web Service](https://feiertage api.de/) of [Julian Richter](https://www.paypal.com/donate?token=-JAL84u4LbrgiDzVqvJqWOnqhusn30r_FwEBT65n0kqlZd7FTRidVBPL9kjFsKIOsZaqFTEm0jz6_JVm) provides access to German holidays in JSON format. 
 
 The tool is based on the information provided by http://de.wikipedia.org/wiki/Feiertage_in_Deutschland. On the Wikipedia page it can be seen that some holidays do not apply throughout Germany, but at the state level. The information mentioned there is integrated in the tool. 
 
