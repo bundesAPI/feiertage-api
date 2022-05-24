@@ -32,7 +32,7 @@ with feiertage.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = default_api.DefaultApi(api_client)
     jahr = "2021" # str | Welches Jahr?
-    nur_land = "BW" # str | Welches Bundesland? (optional)
+    nur_land = "NATIONAL" # str | Welches Bundesland? (optional)
     nur_daten = 1 # int | Nur Daten oder auch Hinweise? (optional)
 
     # example passing only required values which don't have defaults set

@@ -78,6 +78,7 @@ class DefaultApi(object):
                 "validations": {},
                 "allowed_values": {
                     ("nur_land",): {
+                        "NATIONAL": "NATIONAL",
                         "BW": "BW",
                         "BY": "BY",
                         "BE": "BE",
