@@ -31,6 +31,7 @@ paths:
           schema:
             type: string
             enum:
+              - NATIONAL
               - BW
               - BY
               - BE
