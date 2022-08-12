@@ -65,9 +65,7 @@ class DefaultApi(object):
                     "nur_land",
                     "nur_daten",
                 ],
-                "required": [
-                    "jahr",
-                ],
+                "required": [],
                 "nullable": [],
                 "enum": [
                     "nur_land",
@@ -121,19 +119,18 @@ class DefaultApi(object):
             api_client=api_client,
         )
 
-    def get_feiertage(self, jahr, **kwargs):
+    def get_feiertage(self, **kwargs):
         """Get Feiertage  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_feiertage(jahr, async_req=True)
+        >>> thread = api.get_feiertage(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            jahr (str): Welches Jahr?
 
         Keyword Args:
+            jahr (str): Welches Jahr?. [optional]
             nur_land (str): Welches Bundesland?. [optional]
             nur_daten (int): Nur Daten oder auch Hinweise?. [optional]
             _return_http_data_only (bool): response data without head status
@@ -182,5 +179,4 @@ class DefaultApi(object):
         kwargs["_content_type"] = kwargs.get("_content_type")
         kwargs["_host_index"] = kwargs.get("_host_index")
         kwargs["_request_auths"] = kwargs.get("_request_auths", None)
-        kwargs["jahr"] = jahr
         return self.get_feiertage_endpoint.call_with_http_info(**kwargs)

@@ -63,13 +63,13 @@ configuration = feiertage.Configuration(
 with feiertage.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = default_api.DefaultApi(api_client)
-    jahr = "2021" # str | Welches Jahr?
+    jahr = "2021" # str | Welches Jahr? (optional)
     nur_land = "NATIONAL" # str | Welches Bundesland? (optional)
     nur_daten = 1 # int | Nur Daten oder auch Hinweise? (optional)
 
     try:
         # Get Feiertage
-        api_response = api_instance.get_feiertage(jahr, nur_land=nur_land, nur_daten=nur_daten)
+        api_response = api_instance.get_feiertage(jahr=jahr, nur_land=nur_land, nur_daten=nur_daten)
         pprint(api_response)
     except feiertage.ApiException as e:
         print("Exception when calling DefaultApi->get_feiertage: %s\n" % e)
