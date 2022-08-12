@@ -19,7 +19,6 @@ paths:
         - name: jahr
           in: query
           description: Welches Jahr?
-          required: true
           schema:
             type: string
             description: Creation date
