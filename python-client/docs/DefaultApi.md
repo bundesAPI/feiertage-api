@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_feiertage**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} get_feiertage(jahr)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} get_feiertage()
 
 Get Feiertage
 
@@ -31,23 +31,15 @@ configuration = feiertage.Configuration(
 with feiertage.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = default_api.DefaultApi(api_client)
-    jahr = "2021" # str | Welches Jahr?
+    jahr = "2021" # str | Welches Jahr? (optional)
     nur_land = "NATIONAL" # str | Welches Bundesland? (optional)
     nur_daten = 1 # int | Nur Daten oder auch Hinweise? (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get Feiertage
-        api_response = api_instance.get_feiertage(jahr)
-        pprint(api_response)
-    except feiertage.ApiException as e:
-        print("Exception when calling DefaultApi->get_feiertage: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Feiertage
-        api_response = api_instance.get_feiertage(jahr, nur_land=nur_land, nur_daten=nur_daten)
+        api_response = api_instance.get_feiertage(jahr=jahr, nur_land=nur_land, nur_daten=nur_daten)
         pprint(api_response)
     except feiertage.ApiException as e:
         print("Exception when calling DefaultApi->get_feiertage: %s\n" % e)
@@ -58,7 +50,7 @@ with feiertage.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jahr** | **str**| Welches Jahr? |
+ **jahr** | **str**| Welches Jahr? | [optional]
  **nur_land** | **str**| Welches Bundesland? | [optional]
  **nur_daten** | **int**| Nur Daten oder auch Hinweise? | [optional]
 
