@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.abspath("../"))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "feiertage-api"
-copyright = "2022, bund.dev"
+copyright = "2023, bund.dev"
 author = "bund.dev"
 
 version = "1.0.1"
