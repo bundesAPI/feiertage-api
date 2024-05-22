@@ -1,7 +1,7 @@
 [tool]
 [tool.poetry]
 name = "de-feiertage"
-version = "1.0.1"
+version = "1.0.2"
 description = "Feiertage API"
 keywords = ["OpenAPI", "OpenAPI-Generator", "feiertage", "App", "API"]
 homepage = "https://github.com/bundesAPI/feiertage-api"
