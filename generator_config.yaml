@@ -3,7 +3,7 @@ additionalProperties:
   packageName: "feiertage"
   infoName: "BundesAPI"
   infoEmail: "kontakt@bund.dev"
-  packageVersion: 1.0.1
+  packageVersion: 1.0.2
   packageUrl: "https://github.com/bundesAPI/feiertage-api"
   namespace: "deutschland"
   docLanguage: "de"
